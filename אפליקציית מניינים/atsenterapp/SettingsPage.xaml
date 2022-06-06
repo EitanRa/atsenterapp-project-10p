@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:custom="clr-namespace:atsenterapp"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="atsenterapp.SettingsPage">
+    <ContentPage.Content>
+       <StackLayout x:Name="mainLayout" VerticalOptions="FillAndExpand">
+           <!--
+           <Button Text="הוספת העסק שלך לאפליקציה" x:Name="addBuisnessBtn" Clicked="addBuisnessBtn_Clicked" />
+           -->
+            <Button x:Name="zmanimBtn" Text="זמני היום" Clicked="zmanimBtn_Clicked"/>
+            <custom:StyleButton Text="שתף את האפליקציה" x:Name="shareBtn" Clicked="shareBtn_Clicked"/>
+            <custom:LabeledSwitch Title="התראות צפות" Detail="הצג התראות צפות המציגות מידע מהיר על המניין שאתה מחובר אליו" x:Name="foregroundSwitch" CheckedChanged="foregroundSwitch_CheckedChanged" VerticalOptions="StartAndExpand"/>
+            
+            <Button Text="צור קשר" x:Name="contactBtn" Clicked="contactBtn_Clicked" VerticalOptions="End"/>
+            <StackLayout IsVisible="false" x:Name="zmanimLayout">
+                <StackLayout Orientation="Horizontal">
+                    <Label HorizontalOptions="FillAndExpand" FontSize="20" Text="זמני היום והתפילות" HorizontalTextAlignment="Center" />
+                    <Label Text=">>" FontSize="20" HorizontalOptions="End" Padding="3" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="zmanimBackBtn_Clicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+                <ScrollView FlowDirection="RightToLeft">
+                    <Label x:Name="zmanimLbl" FlowDirection="RightToLeft" Padding="3" TextColor="Black" />
+                </ScrollView>
+            </StackLayout>
+       </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

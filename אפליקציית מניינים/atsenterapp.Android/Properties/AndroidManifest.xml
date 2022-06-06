@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="5" android:versionName="1.3.1" package="com.atsenter.atsenterapp">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+    <application android:label="אצנטר" android:theme="@android:style/Theme" android:supportsRtl="true" android:icon="@drawable/launcher_foreground">
+      <!-- Google Maps V2 API Key -->
+      <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAEiI-pnJCVDmB6HInQm1gyduyGYTDBtik" />
+      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <!-- Auto Reply service permissions -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="smsto"/>
+    </intent>
+  </queries>
+</manifest>

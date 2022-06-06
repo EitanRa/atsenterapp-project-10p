@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:atsenterapp"
+             x:Class="atsenterapp.MinyanPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="PageContent">
+            <Label Text="המניין שלך ל" HorizontalOptions="Center" FontSize="20" x:Name="titleLbl" />
+            <StackLayout Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalOptions="FillAndExpand">
+                <Label Text=" סטטוס: " FlowDirection="RightToLeft" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"/>
+                <Label x:Name="mstatusLbl" TextColor="Green" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" FlowDirection="RightToLeft" HorizontalOptions="FillAndExpand">
+                <Label Text=" 👤מספר מתפללים: " HorizontalOptions="Start" FlowDirection="RightToLeft" VerticalOptions="Center" x:Name="detailsLbl" FontSize="13" />
+                <Label Text="0" TextColor="Green" HorizontalOptions="Start" VerticalOptions="Center" x:Name="detailsValues" FontSize="13" FontAttributes="Bold"/>
+            </StackLayout>
+            <Frame Padding="7" BorderColor="Gray" BackgroundColor="Transparent">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" FlowDirection="RightToLeft">
+                    <Image x:Name="nav_icon1" WidthRequest="40" HeightRequest="40" Aspect="AspectFit" />
+                    <Image x:Name="nav_icon2" WidthRequest="40" HeightRequest="40" Aspect="AspectFit" />
+                    <Image x:Name="nav_icon3" WidthRequest="40" HeightRequest="40" Aspect="AspectFit" />
+                    <control:StyleButton Text="נווט למניין" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Clicked="navigationBtn_Clicked" />
+                    <Label />
+                </StackLayout>
+            </Frame>
+            <Line X2="200" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" FlowDirection="RightToLeft">
+                <Label Text=" אתה מגיע: " HorizontalOptions="EndAndExpand" FlowDirection="RightToLeft" VerticalOptions="Start" />
+                <StackLayout VerticalOptions="Center">
+                    <RadioButton Content="לבד" FlowDirection="RightToLeft" HorizontalOptions="Start" VerticalOptions="Center" x:Name="singleCheck" IsChecked="True"/>
+                    <RadioButton Content="כחלק מקבוצה:" FlowDirection="RightToLeft" HorizontalOptions="Start" VerticalOptions="Center" x:Name="groupCheck" CheckedChanged="groupCheck_CheckedChanged"/>
+                </StackLayout>
+                <Picker Title="מספר מתפללים" FlowDirection="RightToLeft" HorizontalOptions="Start" VerticalOptions="End" x:Name="countPicker" IsEnabled="False" SelectedIndexChanged="countPicker_SelectedIndexChanged"/>
+            </StackLayout>
+            <Line X2="200"  BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" x:Name="timeBox" BackgroundColor="Transparent" VerticalOptions="Start" IsEnabled="False">
+                <!-- Controls are been created at the code -->
+            </StackLayout>
+            <Line X2="200"  BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
+            <StackLayout Orientation="Horizontal" x:Name="locDescLayout" FlowDirection="RightToLeft">
+                <Label Text=" תיאור מיקום:" FlowDirection="RightToLeft" HorizontalOptions="End" VerticalOptions="Center"/>
+                <Entry FlowDirection="RightToLeft" x:Name="locDescBox" TextChanged="locDescBox_TextChanged" HorizontalOptions="FillAndExpand" Placeholder="לדוגמה: מול מגרש הכדורסל"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" FlowDirection="RightToLeft">
+                <Button Text="עדכן שינויים" IsEnabled="False" Clicked="Update_Clicked" x:Name="updateBtn" HorizontalOptions="FillAndExpand" BorderWidth="2"/>
+                <Button x:Name="updateLocationBtn" Text="עדכן את מיקום המניין" Clicked="updateLocationBtn_Clicked" IsEnabled="False" HorizontalOptions="FillAndExpand" FlowDirection="RightToLeft"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" FlowDirection="RightToLeft">
+                <Label Text=" עדכונים:" FlowDirection="RightToLeft" HorizontalOptions="StartAndExpand"/>
+                <Label Text="דווח על המניין " TextColor="Red" FontAttributes="Bold" HorizontalOptions="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ReportLabel_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <Frame Padding="2" BorderColor="Gray" VerticalOptions="FillAndExpand">
+                <ScrollView x:Name="updatesBoard" VerticalOptions="StartAndExpand">
+
+                </ScrollView>
+            </Frame>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Button Text="יציאה מהמניין" x:Name="exitBtn" TextColor="Red" Clicked="exitBtn_Clicked"/>
+                <control:StyleButton Text="הזמן חברים למניין" Clicked="Invite_Clicked" x:Name="inviteBtn" HorizontalOptions="FillAndExpand"></control:StyleButton>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

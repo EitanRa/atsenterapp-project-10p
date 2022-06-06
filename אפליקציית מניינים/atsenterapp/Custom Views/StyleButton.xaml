@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="atsenterapp.StyleButton">
+  <ContentView.Content>
+      <StackLayout>
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="30" BackgroundColor="DodgerBlue" Padding="2" x:Name="frame">
+                <Button FontSize="15" FontAttributes="Bold" BorderWidth="2" x:Name="body" Clicked="body_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="30" BackgroundColor="DodgerBlue" BorderColor="White" TextColor="White"/>
+            </Frame>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

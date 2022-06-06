@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:custom="clr-namespace:atsenterapp"
+             x:Class="atsenterapp.LocationPickerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="בחר מיקום" HorizontalOptions="Center" FontSize="20" />
+            <Button x:Name="currentLocBtn" Text="מיקומך הנוכחי" Clicked="currentLocBtn_Clicked" FlowDirection="RightToLeft"/>
+            <Label Text="לחץ על נקודה במפה בשביל לבחור מיקום" FlowDirection="RightToLeft"/>
+            <maps:Map x:Name="map" MapClicked="map_MapClicked"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" FlowDirection="RightToLeft">
+                <custom:StyleButton x:Name="cancelBtn" Text="ביטול" Clicked="cancelBtn_Clicked"/>
+                <custom:StyleButton x:Name="okBtn" Text="אישור" Clicked="okBtn_Clicked" HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

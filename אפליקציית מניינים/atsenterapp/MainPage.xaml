@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:atsenterapp"
+             x:Class="atsenterapp.MainPage">
+
+    <StackLayout x:Name="PageContent" VerticalOptions="Fill">
+        <custom:StyleButton x:Name="create" Text="ארגן מניין" Clicked="create_Clicked" Enabled="False" CornerRadius="5" Padding="4"></custom:StyleButton>
+        <Label x:Name="holidaysLbl" IsVisible="false" HorizontalOptions="Center" FlowDirection="RightToLeft" FontAttributes="Bold" TextColor="HotPink" />
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="refreshBtn" Text="⟳" HorizontalOptions="Start" Clicked="refreshBtn_Clicked" WidthRequest="45" FontSize="20" IsVisible="false" BackgroundColor="Transparent" BorderColor="Black"/>
+            <Entry x:Name="userFavdist" HorizontalOptions="FillAndExpand" Keyboard="Numeric" Focused="userFavdist_Focused" FlowDirection="RightToLeft"/>
+            <Label Text="  טווח חיפוש:" FlowDirection="RightToLeft" VerticalOptions="Center" FontSize="20" x:Name="rangeLbl"/>
+        </StackLayout>
+        <Label x:Name="minyansTitle" Text="ארגון מניינים:" IsVisible="False" FlowDirection="RightToLeft" Padding="2"/>
+        <Label x:Name="statusLbl" Text="טוען מניינים..." FlowDirection="RightToLeft" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+        <ScrollView x:Name="listView" VerticalOptions="StartAndExpand">
+
+        </ScrollView>
+        <Frame BorderColor="Black" Padding="1" IsVisible="False" x:Name="nearbyBK_Frame">
+            <WebView x:Name="nearbyBK" IsVisible="False" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+            </WebView>
+        </Frame>
+        <Label Text="אפשרויות⚙" x:Name="settingsLbl" HorizontalOptions="Center" VerticalOptions="End" TextDecorations="Underline" />
+    </StackLayout>
+
+</ContentPage>
